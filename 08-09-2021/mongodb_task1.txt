@@ -1,0 +1,80 @@
+> show dbs;
+Test    0.000GB
+admin   0.000GB
+config  0.000GB
+guvi    0.000GB
+local   0.000GB
+test1   0.000GB
+> use guvi_training;
+switched to db guvi_training
+> db.users.insertOne({name:"ashish",email:"ashish@gmail.com"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6138d4b935c9083f0bc5ae3a")
+}
+> db.users.insertOne({name:"biswajit",email:"biswajit@gmail.com"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6138d75735c9083f0bc5ae3b")
+}
+> db.users.insertOne({name:"tapas",email:"tapas@gmail.com"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6138d76635c9083f0bc5ae3c")
+}
+> db.users.insertOne({name:"aman",email:"aman@gmail.com"});
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6138d77435c9083f0bc5ae3d")
+}
+> db.codekata.insertMany([{qnno:1,user_id:2},{qnno:2,user_id:2},{qnno:3,user_id:3}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6138d94335c9083f0bc5ae3f"),
+                ObjectId("6138d94335c9083f0bc5ae40"),
+                ObjectId("6138d94335c9083f0bc5ae41")
+        ]
+}
+> db.topics.insertOne({topic_id:1,name:"JAVA"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("6138da2735c9083f0bc5ae42")
+}
+> db.topics.insertMany([{topic_id:2,name:"DBMS"},{topic_id:3,name:"Spring"},{topic_id:4,name:"JDBC"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6138da6935c9083f0bc5ae43"),
+                ObjectId("6138da6935c9083f0bc5ae44"),
+                ObjectId("6138da6935c9083f0bc5ae45")
+        ]
+}
+> db.task.insertMany([{task_id:1,name:"JAVA Task"},{task_id:2,name:"DBMS task"},{task_id:3,name:"Spring task"},{topic_id:4,name:"JDBC task"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6138dad635c9083f0bc5ae46"),
+                ObjectId("6138dad635c9083f0bc5ae47"),
+                ObjectId("6138dad635c9083f0bc5ae48"),
+                ObjectId("6138dad635c9083f0bc5ae49")
+        ]
+}
+> db.company_drives.insertMany([{name:"Chubb",salary:1000},{name:"Amazon",salary:2000},{name:"Microsoft",salary:3000},{name:"HighRadius",salary:4000}]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6138dbdc35c9083f0bc5ae4a"),
+                ObjectId("6138dbdc35c9083f0bc5ae4b"),
+                ObjectId("6138dbdc35c9083f0bc5ae4c")
+                ObjectId("6138dbdc35c9083f0bc5ae4d")
+        ]
+}
+> db.mentors.insertMany([{name:"Mentor1",name:"Mentor2",name:"Mentor3",name:"Mentor4"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("6138dc7c35c9083f0bc5ae4e")
+        ]
+}
+
