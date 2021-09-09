@@ -1,0 +1,154 @@
+> use guvi_training;
+switched to db guvi_training
+> db.users.insertMany([{
+ 
+  "name": "ashish",
+  "email": "ashish@gmail.com"
+},{
+ 
+  "name": "biswajit",
+  "email": "biswajit@gmail.com"
+},{
+  
+  "name": "tapas",
+  "email": "tapas@gmail.com"
+},{
+ 
+  "name": "aman",
+  "email": "aman@gmail.com"
+}]);
+> db.codekata.insertMany([{
+ 
+  "qnno": 1,
+  "user_id": [
+    "1"
+  ]
+},{
+ 
+  "qnno": 4,
+  "user_id": [
+    "2"
+  ]
+},{
+
+  "qnno": 2,
+  "user_id": [
+    "3"
+  ]
+},{
+
+  "qnno": 3,
+  "user_id": [
+    "4"
+  ]
+}])
+> db.topics.insertMany([{
+ 
+  "topic_id": 1,
+  "name": "JAVA",
+  "course_id": "1",
+  "date": {
+    "$date": "2021-09-08T18:30:00Z"
+  }
+},{
+ 
+  "topic_id": 2,
+  "name": "DBMS",
+  "course_id": "2",
+  "date": {
+    "$date": "2020-05-14T18:30:00Z"
+  }
+},{
+ 
+  "topic_id": 3,
+  "name": "Spring",
+  "course_id": "3",
+  "date": {
+    "$date": "2021-09-14T18:30:00Z"
+  }
+},{
+ 
+  "topic_id": 4,
+  "name": "JDBC",
+  "course_id": "4",
+  "date": {
+    "$date": "2021-07-27T18:30:00Z"
+  }
+}])
+
+> db.task.insertMany([{
+ 
+  "task_id": 1,
+  "name": "JAVA Task"
+},{
+  
+  "task_id": 2,
+  "name": "DBMS task"
+},{
+  
+  "task_id": 3,
+  "name": "Spring task"
+},{
+  
+  "topic_id": 4,
+  "name": "JDBC task"
+}])
+
+> db.company_drives.insertMany([{
+  
+  "name": "Chubb",
+  "salary": 1000,
+  "user_id": "1"
+},{
+  
+  "name": "Amazon",
+  "salary": 2000,
+  "user_id": "2"
+},{
+  
+  "name": "Microsoft",
+  "salary": 3000,
+  "user_id": "3"
+},{
+  
+  "name": "HighRadius",
+  "salary": 4000,
+  "user_id": "1"
+}]);
+> db.mentors.insertMany([{
+ 
+  "name": "Mentor4",
+  "id": "4"
+},{
+  
+  "name": "Mentor1",
+  "id": "1"
+},{
+ 
+  "name": "Mentor2",
+  "id": "2"
+},{
+  
+  "name": "mentor3",
+  "id": "3"
+}])
+
+2)db.company_drives.find({
+  "$and":
+[
+  {
+      "date":{
+          "$gte":new Date("2020-09-15")
+      }
+  },
+  {
+      "date":{
+          "$lte":new Date("2020-09-31")
+      }
+  }
+]
+})
+3)
+db.company_drives.find({},{user_id:1,name:1})
+4)db.codekata.find({user_id.id}).count()
+5)db.metnors.find({user_id.id})
