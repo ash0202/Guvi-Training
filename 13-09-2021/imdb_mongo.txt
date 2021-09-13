@@ -1,0 +1,205 @@
+db.user.insertMany([
+    {
+        "user_id":1,
+        "user_name":"Ashish",
+        "movies":
+        [
+            {
+                "movie_id":1,
+                "movie_name":"Avengers",
+                "star":5,
+                "description":"Best"
+            },
+            {
+                "movie_id":2,
+                "movie_name":"Justice League",
+                "star":5,
+                "description":"Amazing"
+            }
+
+        ]
+    },
+    {
+        "user_id":2,
+        "user_name":"Aman",
+        "movies":
+        [
+            {
+                "movie_id":1,
+                "movie_name":"Avengers",
+                "star":4,
+                "description":"Good"
+            },
+            {
+                "movie_id":3,
+                "movie_name":"Man of steel",
+                "star":3,
+                "description":"Average"
+            }
+
+        ]
+    },
+    {
+        "user_id":3,
+        "user_name":"Shuvam",
+        "movies":
+        [
+            {
+                "movie_id":4,
+                "movie_name":"Suicide squad",
+                "star":5,
+                "description":"Terrefic"
+            }
+
+        ]
+    }
+])
+
+db.movie.insertMany([
+    {
+        "movie_id":1,
+        "movie_name":"Avengers",
+        "media":["Video","Image"],
+        "artist":
+        [
+            {
+                "artist_id":1,
+                "artist_name":"Chris Evans",
+                "role":"Hero"
+            },
+            {
+                "artist_id":2,
+                "artist_name":"RDJ",
+                "role":"Hero"
+            },
+            {
+                "artist_id":3,
+                "artist_name":"Chris Helmsworh",
+                "role":"Support hero"
+            }
+        ],
+        "genere":["action","thriller"]
+        
+        
+    },
+    {
+        "movie_id":2,
+        "movie_name":"Justice League",
+        "media":["Video"],
+        "artist":
+        [
+            {
+                "artist_id":4,
+                "artist_name":"Ben Affleck",
+                "role":"Hero"
+            },
+            {
+                "artist_id":5,
+                "artist_name":"Gal Gadoot",
+                "role":"Heroine"
+            }
+        ],
+        "genere":["action","thriller","suspense"]
+    },
+    {
+        "movie_id":3,
+        "movie_name":"Man of Steel",
+        "media":["Image"],
+        "artist":
+        [
+            {
+                "artist_id":6,
+                "artist_name":"Clark Kent",
+                "role":"Hero"
+            }
+        ],
+        "genere":["action"]
+    },
+    {
+        "movie_id":4,
+        "movie_name":"Suicide Squad",
+        "media":["Video"],
+        "artist":
+        [
+            {
+                "artist_id":7,
+                "artist_name":"Will smith",
+                "role":"Hero"
+            }
+        ],
+        "genere":["action","thriller","comedy"]
+    }
+])
+
+db.artist.insertMany([
+    {
+        "artist_id":1,
+        "artist_name":"Chris Evans",
+        "skill":["Action","Serious"]
+    },
+    {
+        "artist_id":2,
+        "artist_name":"RDJ",
+        "skill":["Action","Comdey"]
+    },
+    {
+        "artist_id":3,
+        "artist_name":"Chris Helmsworth",
+        "skill":["Action"]
+    },
+    {
+        "artist_id":4,
+        "artist_name":"Ben Affleck",
+        "skill":["Serious"]
+    },
+    {
+        "artist_id":5,
+        "artist_name":"Gal Gadoot",
+        "skill":["Action","Dance"]
+    },
+    {
+        "artist_id":6,
+        "artist_name":"Will Smith",
+        "skill":["Comedy"]
+    }
+]);
+
+Qn1)
+db.movie.find({"movie_id":1},{media:1})
+Qn2)
+db.movie.find([
+  {
+    '$lookup': {
+      'from': 'movie', 
+      'localField': 'movies.movie_id', 
+      'foreignField': 'movie_id', 
+      'as': 'review'
+    }
+  }
+])
+Qn3)
+db.movie.find([
+  {
+    '$lookup': {
+      'from': 'movie', 
+      'localField': 'movies.movie_id', 
+      'foreignField': 'movie_id', 
+      'as': 'review'
+    }
+  }
+])
+Qn4)
+db.user.find({"user_id":2},{movies:1})
+Qn5)
+db.artist.find({artist_id:1},{skill:1})
+Qn6)
+[
+  {
+    '$lookup': {
+      'from': 'movie', 
+      'localField': 'artist_id', 
+      'foreignField': 'artist.artist_id', 
+      'as': 'role'
+    }
+  }
+]
