@@ -167,7 +167,7 @@ db.artist.insertMany([
 Qn1)
 db.movie.find({"movie_id":1},{media:1})
 Qn2)
-db.movie.find([
+db.movie.aggregate([
   {
     '$lookup': {
       'from': 'movie', 
@@ -178,7 +178,7 @@ db.movie.find([
   }
 ])
 Qn3)
-db.movie.find([
+db.movie.aggregate([
   {
     '$lookup': {
       'from': 'movie', 
@@ -191,7 +191,7 @@ db.movie.find([
 Qn4)
 db.user.find({"user_id":2},{movies:1})
 Qn5)
-db.artist.find({artist_id:1},{skill:1})
+db.artist.aggregate({artist_id:1},{skill:1})
 Qn6)
 [
   {
