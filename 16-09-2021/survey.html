@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey</title>
+	<style>
+		td{
+			padding: 7px;
+
+		}
+		.tab{
+			display: flex;
+			justify-content: center;
+		}
+		div{
+			display: flex;
+			justify-content: center;
+			margin-top: 10px;
+		}
+		.reset
+		{
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	
+		<form>
+			<table class="tab">
+			<tr>
+				<td>Enter your name</td>
+				<td><input type="text" name="name" placeholder="Enter your name"></td>
+			</tr>
+			<tr>
+				<td>Enter your email</td>
+				<td><input type="email" name="email" placeholder="Enter your email"></td>
+			</tr>
+			<tr>
+				<td>Enter your Date of birth</td>
+				<td><input type="date" name="dob" placeholder="Enter your DOB"></td>
+			</tr>
+			<tr>
+				<td>Enter your gender</td>
+				<td><input type="radio" name="gender" group="gender">Male
+					<input type="radio" name="gender" group="gender">Female
+				</td>
+			</tr>
+			<tr>
+				<td>Enter your martial status</td>
+				<td><input type="radio" name="mrg" group="mrg">Married
+					<input type="radio" name="mrg" group="mrg">Single
+				</td>
+			</tr>
+			<tr>
+				<td>Which poltical party you support</td>
+				<td>
+					<select>
+						<option value="BJP">BJP</option>
+						<option value="Congress">Congress</option>
+						<option value="AAP">AAP</option>
+						<option value="BJD">BJD</option>
+						<option value="Other">Other</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Favourite political leader</td>
+				<td>
+					<select>
+						<option value="Narendra Modi">Narendra Modi</option>
+						<option value="Arvind Kejriwal">Arvind Kejriwal</option>
+						<option value="APJ Abdul Kalam">APJ Abdul Kalam</option>
+						<option value="Atal Bihari Bajpayee">Atal Bihari Bajpayee</option>
+						<option value="Manmohan Singh">Manmohan Singh</option>
+						<option value="Other">Other</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Which party will win this election</td>
+					<td>
+						<select>
+							<option value="BJP">BJP</option>
+							<option value="Congress">Congress</option>
+							<option value="AAP">AAP</option>
+							<option value="BJD">BJD</option>
+							<option value="Other">Other</option>
+						</select>
+					</td>				
+			</tr>
+			<tr>
+				<td>Upload your adhar card</td>
+					<td>
+						<input type="file">
+					</td>				
+			</tr>
+			<tr>
+				<td>Tell about yourself</td>
+					<td>
+						<textarea rows="5" cols="20"></textarea>
+					</td>				
+			</tr>
+			</table>
+			<div>
+				<input type="submit" value="Submit">
+				<input type="reset" class="reset">
+			</div>
+		</form>
+	
+</body>
+</html>
