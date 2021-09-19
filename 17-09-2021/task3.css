@@ -1,0 +1,40 @@
+body{
+	
+	background-color: white;
+}
+
+.upper{
+	display: flex;
+	margin-top: 2vh;
+	margin-left: 1vh;
+}
+.upper2{
+	margin-left: 160vh;
+
+}
+.head{
+	flex-wrap: wrap;
+	
+}
+.heading{
+	display: flex;
+}
+.head1{
+	display: flex;
+	padding-right: 20px
+}
+.midc{
+	display: flex;
+}
+.lower1
+{
+	display: flex;
+	flex-direction: row;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+.lower11
+{
+	flex-direction: row;
+	flex-wrap: wrap;
+}
